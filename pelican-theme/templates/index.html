@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}  
+<section class="b-posts">
+  {% if articles %}
+    {% for article in (articles_page.object_list if articles_page else articles) %}
+      {% include 'article_one.html' %}
+    {% endfor %}
+    {% include 'pagination.html' %}
+  {% endif %}
+</section><!-- class="b-posts" -->
+{% endblock %}
